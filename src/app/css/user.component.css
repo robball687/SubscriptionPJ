@@ -26,6 +26,7 @@
 }
 .users .text {
   position: relative;  
+  top: -3px;
 }
 .users .badge {
   display: inline-block;
