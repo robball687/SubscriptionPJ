@@ -1,5 +1,8 @@
 <div *ngIf="selectedUser">  
-  <user-detail [user]="selectedUser"></user-detail>
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
 </div>
 
 <div>

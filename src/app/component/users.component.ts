@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }            from '@angular/router';
 
 import { User } from './../class/user'
 import { UserService } from './../service/user.service';
@@ -6,8 +7,7 @@ import { UserService } from './../service/user.service';
 @Component({
   selector: 'my-users',
   templateUrl: './../html/user.component.html', 
-  styleUrls: ['./../css/user.component.css'],
-  providers: [UserService]
+  styleUrls: ['./../css/user.component.css']
 })
 
 export class UsersComponent implements OnInit 
@@ -16,17 +16,44 @@ export class UsersComponent implements OnInit
   users: User[]; 
   selectedUser: User;  
 
-  constructor(private userService: UserService) { }
-  
-   getUsers(): void {
-     this.userService.getUsers().then(users => this.users = users);
-   }
-  
-   ngOnInit(): void {
-     this.getUsers();
-   }
+  constructor(
+    private userService: UserService,
+    private router: Router) { }
+    
+  getUsers(): void {
+    this.userService
+        .getUsers()
+        .then(users => this.users = users);
+  }
 
-   onSelect(user: User): void {
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.userService.create(name)
+      .then(user => {
+        this.users.push(user);
+        this.selectedUser = null;
+      });
+  }
+
+  delete(user: User): void {
+    this.userService
+        .delete(user.id)
+        .then(() => {
+          this.users = this.users.filter(h => h !== user);
+          if (this.selectedUser === user) { this.selectedUser = null; }
+        });
+  }
+  
+  ngOnInit(): void {
+    this.getUsers();
+  }
+
+  onSelect(user: User): void {
     this.selectedUser = user;
-   }
+  }
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedUser.id]);
+  }
 }
