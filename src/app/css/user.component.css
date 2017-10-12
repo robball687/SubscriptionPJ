@@ -13,20 +13,29 @@
   width: 10em;
   left: 0;
   float:left;
-  background-color: #EEE;
+  /*background-color: #4B688B;*/
+  color:white;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  background-image: -webkit-gradient(from(#143153), to(#4B688B));
+  background-image: -webkit-linear-gradient( #143153, #4B688B);
+  background-image: -moz-linear-gradient( #143153, #4B688B);
+  background-image: linear-gradient( #143153, #4B688B); 
 }
 .users li.selected:hover {
   background-color: #BBD8DC !important;
-  color: white;
+  color: white;  
 }
 .users li:hover {
-  color: #607D8B;
-  background-color: #DDD;
+  color: white;
+  /*background-color: #748BA7;*/
   left: .1em;
+  background-image: -webkit-gradient(from(#4B688B), to(#143153));
+  background-image: -webkit-linear-gradient( #4B688B, #143153);
+  background-image: -moz-linear-gradient( #4B688B, #143153);
+  background-image: linear-gradient( #4B688B, #143153); 
 }
 .users .text {
   position: relative;
@@ -37,15 +46,17 @@
   font-size: small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
+  /*background-color: #143153;*/
   line-height: 1em;
   position: relative;
   left: -1px;
   top: -4px;
-  height: 1.8em;
+  height: 1.7em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
+  
 }
+
 
 button.delete {
   float:right;
