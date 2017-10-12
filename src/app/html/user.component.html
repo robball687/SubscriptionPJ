@@ -1,8 +1,15 @@
+<div *ngIf="selectedUser">  
+  <user-detail [user]="selectedUser"></user-detail>
+</div>
+
 <div>
 <h2>Users {{title}}</h2>
 <ul class="users" >
-  <li *ngFor="let user of users">
+  <li *ngFor="let user of users" (click)="onSelect(user)" 
+    [class.selected]="user === selectedUser">
     <span><span class="badge">{{user.id}}</span> {{user.name}}</span>
   </li>
 </ul>
 </div>
+
+
