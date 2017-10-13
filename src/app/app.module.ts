@@ -11,6 +11,7 @@ import { AppComponent }        from './app.component';
 import { UsersComponent }     from './component/users.component';
 import { UserService }         from './service/user.service';
 import { UserDetailComponent } from './component/user-detail.component';
+import { UserSearchComponent } from './component/user-search.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -25,7 +26,8 @@ import { AppRoutingModule }     from './app-routing.module';
   declarations: [
     AppComponent,    
     UsersComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserSearchComponent
   ],
   providers: [
     UserService
