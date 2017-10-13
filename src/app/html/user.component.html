@@ -8,8 +8,9 @@
 <div>
 <h2>Users {{title}}</h2>
 <ul class="users" >
-  <li *ngFor="let user of users" (click)="onSelect(user)" 
+  <li *ngFor="let user of users" (click)="onSelect(user);gotoDetail();" 
     [class.selected]="user === selectedUser">
+    <img src="./../image/PersonIcon.png')">
     <span><span class="badge">{{user.id}}</span> {{user.name}}</span>
   </li>
 </ul>

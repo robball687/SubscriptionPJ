@@ -1,11 +1,21 @@
 <div *ngIf="user">
+    <br>
+    <button (click)="goBack()">Back</button><button (click)="save()">Save</button>
+
     <h2>{{user.name}} details!</h2>
-    <div><label>id: </label>{{user.id}}</div>
+    <div>
+      <label>id: </label>{{user.id}}
+    </div>
     <div>
       <label>name: </label>
-      <input [(ngModel)]="user.name" placeholder="name"/>
+      <input [(ngModel)]="user.name" placeholder="name"/>      
     </div>
-
-    <button (click)="goBack()">Back</button>
-    <button (click)="save()">Save</button>
+    
+    <h2>Devices</h2>    
+    <ul class="users" >
+      <li *ngFor="let device of user.devices" >
+        <span><span class="badge">{{device.id}}</span> {{device.name}}</span>
+      </li>
+    </ul>     
+    
 </div>

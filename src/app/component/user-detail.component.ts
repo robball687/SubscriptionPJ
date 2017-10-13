@@ -8,7 +8,8 @@ import { UserService } from './../service/user.service';
 
 @Component({
   selector: 'user-detail',
-  templateUrl: './../html/user-detail.component.html'
+  templateUrl: './../html/user-detail.component.html',
+  styleUrls: ['./../css/user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit 
 {    
