@@ -11,12 +11,12 @@ import { UserService } from './../service/user.service';
 })
 
 export class UsersComponent implements OnInit 
-{ 
+{   
   name = 'Angular';
   users: User[]; 
   selectedUser: User;  
 
-  constructor(
+  constructor(    
     private userService: UserService,
     private router: Router) { }
     
@@ -49,11 +49,13 @@ export class UsersComponent implements OnInit
     this.getUsers();
   }
 
-  onSelect(user: User): void {
+  onSelect(user: User): void {    
     this.selectedUser = user;
   }
 
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedUser.id]);
   }
+  
+  
 }
