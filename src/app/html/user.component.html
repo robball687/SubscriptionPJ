@@ -9,9 +9,10 @@
 <h2>Users {{title}}</h2>
 <ul class="users" >
   <li *ngFor="let user of users" (click)="onSelect(user);gotoDetail();" 
-    [class.selected]="user === selectedUser">
-    <img src="./../image/PersonIcon.png')">
-    <span><span class="badge">{{user.id}}</span> {{user.name}}</span>
+    [class.selected]="user === selectedUser">    
+    <img class="icon" src='./Image/PersonIcon.png' style="width:75px;height:75px;"/>
+    <span class="badge">{{user.id}}</span>
+    <span class="icontext">{{user.name}}</span>
   </li>
 </ul>
 </div>
