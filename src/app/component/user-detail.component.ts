@@ -38,8 +38,7 @@ export class UserDetailComponent implements OnInit
       this.location.back();
     }
 
-    onSelect(device: Device): void {    
-      alert(device.name);
+    onSelect(device: Device): void {          
       this.selectedDevice = device;
     }
 }
