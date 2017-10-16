@@ -35,7 +35,7 @@ export class UsersComponent implements OnInit
         this.selectedUser = null;
       });
   }
-
+  
   delete(user: User): void {
     this.userService
         .delete(user.id)

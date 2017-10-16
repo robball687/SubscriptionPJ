@@ -22,6 +22,12 @@
         </div>    
     </div>
 
+    <div>
+        <h4>Add Device</h4>   
+        <input #deviceName />
+        <button (click)="addDevice(deviceName.value); deviceName.value=''">Add</button>
+    </div>
+
     <h2>Devices</h2>    
     <ul class="users" >
       <li *ngFor="let device of user.devices" (click)="onSelect(device);" >
