@@ -11,11 +11,25 @@
       <input [(ngModel)]="user.name" placeholder="name"/>      
     </div>
     
+    <div *ngIf="selectedDevice"> 
+        <h2>{{selectedDevice.name}} details!</h2>
+        <div>
+          <label>id: </label>{{selectedDevice.id}}
+        </div>
+        <div>
+          <label>name: </label>
+          <input [(ngModel)]="selectedDevice.name" placeholder="name"/>      
+        </div>    
+    </div>
+
     <h2>Devices</h2>    
     <ul class="users" >
-      <li *ngFor="let device of user.devices" >
-        <span><span class="badge">{{device.id}}</span> {{device.name}}</span>
+      <li *ngFor="let device of user.devices" (click)="onSelect(device);" >
+        <span>
+          <span class="badge">{{device.id}}</span>{{device.name}}               
+        </span>
       </li>
     </ul>     
     
 </div>
+

@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
 import { User } from './../class/user'
+import { Device } from './../class/device'
 import { UserService } from './../service/user.service';
 
 @Component({
@@ -14,6 +15,7 @@ import { UserService } from './../service/user.service';
 export class UserDetailComponent implements OnInit 
 {    
     user: User;
+    selectedDevice: Device;  
 
     constructor(
       private userService: UserService,
@@ -34,5 +36,10 @@ export class UserDetailComponent implements OnInit
 
     goBack(): void {
       this.location.back();
+    }
+
+    onSelect(device: Device): void {    
+      alert(device.name);
+      this.selectedDevice = device;
     }
 }
