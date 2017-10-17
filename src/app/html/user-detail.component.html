@@ -29,10 +29,10 @@
     </div>
 
     <h2>Devices</h2>    
-    <ul class="users" >
-      <li *ngFor="let device of user.devices" (click)="onSelect(device);" >
+    <ul class="objects" >
+      <li *ngFor="let device of devices" (click)="onSelect(device);" >
         <img class="icon" src='./Image/PersonIcon.png' style="width:75px;height:75px;"/>
-        <span class="badge">{{device.id}}</span>
+        <span class="badge">{{device.userFK}}</span>
         <span class="icontext">{{device.name}}</span>  
       </li>
     </ul>     

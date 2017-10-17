@@ -8,11 +8,16 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './service/in-memory-data.service';
 
 import { AppComponent }        from './app.component';
+
 import { UsersComponent }     from './component/users.component';
+import { DevicesComponent }     from './component/devices.component';
+
 import { AddUserComponent }     from './component/add-user.component';
-import { UserService }         from './service/user.service';
 import { UserDetailComponent } from './component/user-detail.component';
 import { UserSearchComponent } from './component/user-search.component';
+
+import { UserService }         from './service/user.service';
+import { DeviceService }         from './service/device.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -27,12 +32,14 @@ import { AppRoutingModule }     from './app-routing.module';
   declarations: [
     AppComponent,    
     UsersComponent,
+    DevicesComponent,
     UserDetailComponent,
     UserSearchComponent,
     AddUserComponent
   ],
   providers: [
-    UserService
+    UserService,
+    DeviceService
   ],
   bootstrap: [ AppComponent ]
 })

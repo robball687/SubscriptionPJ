@@ -8,7 +8,7 @@
 
 <div>
 <h2>Users {{title}}</h2>
-<ul class="users" >
+<ul class="objects" >
   <li *ngFor="let user of users" (click)="onSelect(user);gotoDetail();" 
     [class.selected]="user === selectedUser">    
     <img class="icon" src='./Image/PersonIcon.png' style="width:75px;height:75px;"/>

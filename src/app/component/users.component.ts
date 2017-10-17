@@ -7,7 +7,7 @@ import { UserService } from './../service/user.service';
 @Component({
   selector: 'my-users',
   templateUrl: './../html/user.component.html', 
-  styleUrls: ['./../css/user.component.css']
+  styleUrls: ['./../css/object.component.css']
 })
 
 export class UsersComponent implements OnInit 
