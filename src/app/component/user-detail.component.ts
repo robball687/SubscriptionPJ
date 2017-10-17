@@ -32,7 +32,6 @@ export class UserDetailComponent implements OnInit
     addDevice(newName: string, user: User): void {
       newName = newName.trim();
       if (!newName) { return; }
-      if(this.user.devices == null) { this.user.devices= Device[1]; }
       this.user.devices.push({id: 5, name:newName});
       this.userService.update(this.user);        
     }
