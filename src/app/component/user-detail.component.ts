@@ -32,8 +32,26 @@ export class UserDetailComponent implements OnInit
     addDevice(newName: string, user: User): void {
       newName = newName.trim();
       if (!newName) { return; }
-      this.user.devices.push({id: 5, name:newName});
-      this.userService.update(this.user);        
+      var newid = 0;            
+      this.userService.getUsers()
+        .then((data) => {              
+          for (var u of data) {
+            for (var d of u.devices)
+            {              
+              if(newid < d.id)
+              {
+                newid = d.id;
+              }            
+            }
+          }      
+          newid = newid + 1;          
+          this.user.devices.push({id: newid, name:newName});
+          this.userService.update(this.user);           
+        }).catch((ex) => {
+          alert(ex);
+          console.log(ex);
+        }
+      );      
     }
 
     save(): void {

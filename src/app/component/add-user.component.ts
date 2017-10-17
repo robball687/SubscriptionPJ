@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
 import { User } from './../class/user'
+import { Device } from './../class/device'
 import { UserService } from './../service/user.service';
 
 @Component({
@@ -29,11 +30,33 @@ export class AddUserComponent implements OnInit
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.userService.create(name)
-      .then(user => {
-        this.users.push(user);
-        this.selectedUser = null;
-      });
+    var newid = 0;
+    var tmpUser: User = new User();
+    tmpUser.name=name;
+    tmpUser.devices = new Array<Device>();
+    this.userService.getUsers()
+    .then((data) => {              
+      for (var u of data) {  
+          if(newid < u.id)
+          {
+            newid = u.id;
+          } 
+        }  
+        newid=newid+1;
+        tmpUser.id=newid;
+    
+        this.userService.create(tmpUser)
+          .then(user => {
+            this.users.push(user);
+            this.selectedUser = null;
+            alert("User ( " + user.name + " ) Created!");
+            this.router.navigate(['/users']);
+          });                  
+      }).catch((ex) => {
+        alert(ex);
+        console.log(ex);
+      }
+    );    
   }
 
   delete(user: User): void {

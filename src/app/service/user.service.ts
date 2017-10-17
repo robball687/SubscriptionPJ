@@ -35,9 +35,9 @@ export class UserService {
         .catch(this.handleError);
     }
     
-    create(name: string): Promise<User> {
+    create(user: User): Promise<User> {
         return this.http
-          .post(this.usersUrl, JSON.stringify({name: name}), {headers: this.headers})
+          .post(this.usersUrl, JSON.stringify(user), {headers: this.headers})
           .toPromise()
           .then(res => res.json().data as User)
           .catch(this.handleError);
