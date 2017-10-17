@@ -1,67 +1,86 @@
 .selected {
-    background-color: #CFD8DC !important;
-    color: white;  
-  }
-  .users {
-    margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;  
-  }
-  .users li {
-    cursor: pointer;
-    position: relative;
-    width: 10em;
-    left: 0;
-    float:left;
-    /*background-color: #4B688B;*/
-    color:white;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
-    background-image: -webkit-gradient(from(#143153), to(#4B688B));
-    background-image: -webkit-linear-gradient( #143153, #4B688B);
-    background-image: -moz-linear-gradient( #143153, #4B688B);
-    background-image: linear-gradient( #143153, #4B688B); 
-  }
-  .users li.selected:hover {
-    background-color: #BBD8DC !important;
-    color: white;  
-  }
-  .users li:hover {
-    color: white;
-    /*background-color: #748BA7;*/
-    left: .1em;
-    background-image: -webkit-gradient(from(#4B688B), to(#143153));
-    background-image: -webkit-linear-gradient( #4B688B, #143153);
-    background-image: -moz-linear-gradient( #4B688B, #143153);
-    background-image: linear-gradient( #4B688B, #143153); 
-  }
-  .users .text {
-    position: relative;
-    top: -3px;
-  }
-  .users .badge {
-    display: inline-block;
-    font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    /*background-color: #143153;*/
-    line-height: 1em;
-    position: relative;
-    left: -1px;
-    top: -4px;
-    height: 1.7em;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
-    
-  }
+  background-color: #CFD8DC !important;
+  color: white;  
+}
+.users {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;  
+}
+.users li {
+  cursor: pointer;
+  position: relative;
+  width: 15em;
+  left: 0;   
+  margin: .5em;
+  padding: .3em 0;    
+  border-radius: 25px;
+  height: 2.6em;
+  color:white;  
+  float:left;  
+  background-image: -webkit-gradient(from(#143153), to(#4B688B));
+  background-image: -webkit-linear-gradient( #143153, #4B688B);
+  background-image: -moz-linear-gradient( #143153, #4B688B);
+  background-image: linear-gradient( #143153, #4B688B); 
+}
+.users li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;  
+}
+.users li:hover {
+  color: white;
+  /*background-color: #748BA7;*/
+  left: .1em;
+  background-image: -webkit-gradient(from(#4B688B), to(#143153));
+  background-image: -webkit-linear-gradient( #4B688B, #143153);
+  background-image: -moz-linear-gradient( #4B688B, #143153);
+  background-image: linear-gradient( #4B688B, #143153); 
+}
+.users .text {
+  position: relative;
+  top: -3px;
+}
+.users .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  /*background-color: #143153;*/
+  line-height: 1em;
+  position: relative;
+  left: -20px;
+  top: -33px;
+  height: 2.7em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
   
+}
+
+.users .icontext {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  /*background-color: #143153;*/
+  line-height: 1em;
+  position: relative;
+  left: 0px;
+  top: -33px;
+  height: 2.7em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
   
-  button.delete {
-    float:right;
-    margin-top: 2px;
-    margin-right: .8em;
-    background-color: gray !important;
-    color:white;
-  }
+}
+.icon
+{
+  margin-top:-16px;
+  margin-left:-16px;
+}
+
+button.delete {
+  float:right;
+  margin-top: 2px;
+  margin-right: .8em;
+  background-color: gray !important;
+  color:white;
+}

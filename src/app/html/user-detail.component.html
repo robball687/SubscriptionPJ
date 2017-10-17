@@ -1,7 +1,5 @@
 <div *ngIf="user">
-    <br>
-    <button (click)="goBack()">Back</button><button (click)="save()">Save</button>
-
+    
     <h2>{{user.name}} details!</h2>
     <div>
       <label>id: </label>{{user.id}}
@@ -10,6 +8,8 @@
       <label>name: </label>
       <input [(ngModel)]="user.name" placeholder="name"/>      
     </div>
+    <br>
+    <button (click)="goBack()">Back</button>&nbsp;<button (click)="save()">Save</button>
     
     <div *ngIf="selectedDevice"> 
         <h2>{{selectedDevice.name}} details!</h2>
@@ -31,9 +31,9 @@
     <h2>Devices</h2>    
     <ul class="users" >
       <li *ngFor="let device of user.devices" (click)="onSelect(device);" >
-        <span>
-          <span class="badge">{{device.id}}</span>{{device.name}}               
-        </span>
+        <img class="icon" src='./Image/PersonIcon.png' style="width:75px;height:75px;"/>
+        <span class="badge">{{device.id}}</span>
+        <span class="icontext">{{device.name}}</span>  
       </li>
     </ul>     
     
